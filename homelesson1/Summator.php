@@ -6,7 +6,6 @@
 
 require ("ReadFromConsole.php");
 
-$array = [];
 $array = readFromConsole();
 $sum = array_sum($array);
 exit("Сумма всех введенных значений = $sum");
