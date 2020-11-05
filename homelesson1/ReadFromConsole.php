@@ -13,11 +13,13 @@ function readFromConsole()
             case "y" :
                 echo "Введите число: ";
                 $input = trim(fgets(STDIN));
-                if (is_numeric($input)) {
+                if (is_numeric($input))
+                {
                     array_push($array, $input);
-                } else {
-                    echo "Введенное значение не является числом" . PHP_EOL;
-                }
+                } else
+                    {
+                        echo "Введенное значение не является числом" . PHP_EOL;
+                    }
                 echo "Продолжать вводить? y/n" . PHP_EOL;
                 $continue = trim(fgets(STDIN));
                 break;
