@@ -8,5 +8,5 @@ require ("ReadFromConsole.php");
 
 $array = [];
 $array = readFromConsole();
-$summa = array_sum($array);
-exit("Сумма всех введенных значений = $summa");
+$sum = array_sum($array);
+exit("Сумма всех введенных значений = $sum");
