@@ -2,7 +2,7 @@
 /*
  * файл с функцией, содержащей встроенные тесты
  */
-require_once 'readfromconsole.php';
+require_once 'readFromConsole.php';
 
 function perfomAutomaticTests()
 {
