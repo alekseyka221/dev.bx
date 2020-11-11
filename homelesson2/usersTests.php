@@ -9,7 +9,7 @@ function perfomUsersTests()
 	echo 'Ожидаемый результат: '.PHP_EOL;
 	$expectation = trim(fgets(STDIN));
 
-	if ($result == $expectation)
+	if ($result === $expectation)
 	{
 		echo 'test passed'.PHP_EOL;
 	}
