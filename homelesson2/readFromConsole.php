@@ -5,11 +5,12 @@
  */
 function readFromConsole($input = '')
 {
+	if($input == '')
+	{
+		$input = trim(fgets(STDIN));
+	}
 	switch ($input)
 	{
-		case '':
-			$input = trim(fgets(STDIN));
-			return $input;
 		case 'true':
 			return true;
 		case 'false':
