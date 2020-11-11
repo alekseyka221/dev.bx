@@ -1,7 +1,7 @@
 <?php
 require_once 'readfromconsole.php';
 
-function usersTests()
+function perfomUsersTests()
 {
 	echo 'Введите данные для проверки: '.PHP_EOL;
 	$result = readFromConsole();
