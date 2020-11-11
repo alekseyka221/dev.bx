@@ -3,7 +3,8 @@
  * Исправленный вариант функции readFromConsole
  * с учетом code review и TDD
  */
-function readFromConsole($input = ''){
+function readFromConsole($input = '')
+{
 	switch ($input)
 	{
 		case '':
