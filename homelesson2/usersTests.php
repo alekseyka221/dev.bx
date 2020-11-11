@@ -1,5 +1,5 @@
 <?php
-require_once 'readfromconsole.php';
+require_once 'readFromConsole.php';
 
 function perfomUsersTests()
 {
