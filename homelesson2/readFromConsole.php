@@ -11,9 +11,9 @@ function readFromConsole($input = '')
 			$input = trim(fgets(STDIN));
 			return $input;
 		case 'true':
-			return 'true';
+			return true;
 		case 'false':
-			return 'false';
+			return false;
 		case '!stop':
 			return 'null';
 		case is_numeric($input):
