@@ -4,7 +4,7 @@
  */
 require_once 'readfromconsole.php';
 
-function automaticTests()
+function perfomAutomaticTests()
 {
 	echo 'Встроенные тесты'.PHP_EOL;
 
