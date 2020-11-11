@@ -5,7 +5,6 @@ function readFromConsole()
 {
     $array = array();
     $continue = "y";
-
     while (true)
     {
         switch ($continue)
@@ -16,7 +15,7 @@ function readFromConsole()
                 if (is_numeric($input))
                 {
                     array_push($array, $input);
-                } else
+                }else
                     {
                         echo "Введенное значение не является числом" . PHP_EOL;
                     }
@@ -30,8 +29,6 @@ function readFromConsole()
                 echo "Продолжать вводить? y/n" . PHP_EOL;
                 $continue = trim(fgets(STDIN));
                 break;
-
         }
-
     }
 }
