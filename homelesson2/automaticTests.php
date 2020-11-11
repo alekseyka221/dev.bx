@@ -3,7 +3,9 @@
  * файл с функцией, содержащей встроенные тесты
  */
 require_once 'readfromconsole.php';
-function automaticTests(){
+
+function automaticTests()
+{
 	echo 'Встроенные тесты'.PHP_EOL;
 
 	$result=readFromConsole('true');
