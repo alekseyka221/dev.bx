@@ -9,12 +9,13 @@ function perfomAutomaticTests()
 	echo 'Встроенные тесты'.PHP_EOL;
 
 	$result=readFromConsole('true');
-	echo '1) Результат функции: '.var_export($result, true).PHP_EOL.' Ожидаемый результат: true'.PHP_EOL;
+	echo '1) Результат функции: '.var_export($result, true).
+		 PHP_EOL.' Ожидаемый результат: true'.PHP_EOL;
 	echo ($result === true ? ' passed' : ' failed').PHP_EOL;
 
-
 	$result=readFromConsole('false');
-	echo '2) Результат функции: '.var_export($result, true).PHP_EOL.' Ожидаемый результат: false'.PHP_EOL;
+	echo '2) Результат функции: '.var_export($result, true).
+		 PHP_EOL.' Ожидаемый результат: false'.PHP_EOL;
 	echo ($result === false ? ' passed' : ' failed').PHP_EOL;
 
 	$result=readFromConsole('!stop');
