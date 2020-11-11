@@ -13,4 +13,5 @@ while($userChoice == 'y')
 	echo 'Хотите провести тест еще?'.PHP_EOL.'Введите y/n'.PHP_EOL;
 	$userChoice = readFromConsole();
 }
+
 exit(1);
