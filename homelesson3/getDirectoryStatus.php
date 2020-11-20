@@ -15,7 +15,7 @@ function getDirectoryStatus($input)
                 continue;
             }
             if (is_dir($input.$element)) {
-                $list['dirs'][$element][] = 'is folder';
+                $list['dirs'][$element][] = 'is directory';
 
                 if (is_readable($input.$element)) {
                     $list['dirs'][$element][] = 'is readable: true';
