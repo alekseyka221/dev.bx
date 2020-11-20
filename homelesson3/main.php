@@ -14,15 +14,5 @@ else
       $result = getDirectoryStatus($input);
       print_r($result);
 }
-/*
-foreach ($r as $key => $value)
-{
-    foreach ($value as $valuevalue => $v2)
-    {
-        foreach ($v2 as $v3)
-        {
-            echo $v3.' ';
-        }
-    }
-}*/
+
 
