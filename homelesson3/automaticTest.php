@@ -14,7 +14,7 @@ function test()
     echo 'Проверка на директорию' . PHP_EOL;
     echo 'Ожидание:' . 'is directory' . PHP_EOL;
     echo 'Реальность: ' . $testing['dirs']['0'][0] . PHP_EOL;
-    echo ($testing['dirs']['0'][0] === 'is folder' ? 'passed' : 'failed') . PHP_EOL;
+    echo ($testing['dirs']['0'][0] === 'is directory' ? 'passed' : 'failed') . PHP_EOL;
     echo 'Проверка на читаемость:' . PHP_EOL;
     echo 'Ожидание: ' . 'is readable: true' . PHP_EOL;
     echo 'Реальность: ' . $testing['dirs']['0'][1].PHP_EOL;
