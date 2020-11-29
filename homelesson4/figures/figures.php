@@ -8,8 +8,8 @@ namespace AlexShah{
 		protected $column;
 		function __construct($a, $b)
 		{
-			$this->__set('column', $a);
-			$this->__set('line',$b);
+			$this->column = $a;
+			$this->line = $b;
 		}
 		function __set($name, $value)
 		{
