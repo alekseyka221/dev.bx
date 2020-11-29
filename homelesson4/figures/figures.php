@@ -6,16 +6,23 @@ namespace AlexShah{
 	{
 		protected $line;
 		protected $column;
-		function __construct($a, $b)
+		public function __construct($a, $b)
 		{
-			$this->column = $a;
-			$this->line = $b;
-		}
-		function __set($name, $value)
-		{
-			if(is_numeric($value) && $value >= 1 && $value <= 8)
+			if(is_numeric($a) && $a >= 1 && $a <= 8)
 			{
-				$this->$name = $value;
+				if (is_numeric($b) && $b >= 1 && $b <= 8)
+				{
+					$this->column = $a;
+					$this->line = $b;
+				}
+				else
+				{
+					exit('Указано неверное значение');
+				}
+			}
+			else
+			{
+				exit('Указано неверное значение');
 			}
 		}
 		abstract public function checkAttack($column, $line);
@@ -23,13 +30,9 @@ namespace AlexShah{
 
 	class Rook extends Figures
 	{
-		function __construct($a, $b)
+		public function __construct($a, $b)
 		{
 			parent::__construct($a,$b);
-		}
-		function __set($a, $b)
-		{
-			parent::__set($a, $b);
 		}
 		public function checkAttack($column, $line) : string
 		{
@@ -46,7 +49,7 @@ namespace AlexShah{
 
 	class Queen extends Rook
 	{
-		function __construct($a, $b)
+		public function __construct($a, $b)
 		{
 			parent::__construct($a,$b);
 		}
