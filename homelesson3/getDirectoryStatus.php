@@ -4,48 +4,41 @@
  * лежащих в input
  */
 
-function getDirectoryStatus($input)
+function getDirectoryStatus($input): array
 {
     if($currentDir = opendir($input))
     {
-        $list = ['dirs'=>[],'files'=>[]];
-        while (false !== ($element = readdir($currentDir))) {
+        $list = [
+        	'dirs'=>[],
+			'files'=>[]
+		];
+        while (false !== ($element = readdir($currentDir)))
+		{
             if (in_array($element, ['.', '..']))
             {
                 continue;
             }
-            if (is_dir($input.$element)) {
-                $list['dirs'][$element][] = 'is directory';
-
-                if (is_readable($input.$element)) {
-                    $list['dirs'][$element][] = 'is readable: true';
-                } else {
-                    $list['dirs'][$element][] = 'is readable: false';
-                }
-                if (is_writable($input.$element)) {
-                    $list['dirs'][$element][] = 'is writable: true';
-                } else {
-                    $list['dirs'][$element][] = 'is writable: false';
-                }
+            if (is_dir($input.$element))
+            {
+				$list['dirs'][$element]['is_readable'] =
+					(is_readable($input.$element) == true ? 'true' : 'false');
+				$list['dirs'][$element]['is_writable'] =
+					(is_writable($input.$element) == true ? 'true' : 'false');
             }
-            if (is_file($input.$element)) {
-                $list['files'][$element][] = 'is file';
-
-                if (is_readable($input.$element)) {
-                    $list['files'][$element][] = 'is readable: true';
-                } else {
-                    $list['files'][$element][] = 'is readable: false';
-                }
-                if (is_writable($input.$element)) {
-                    $list['files'][$element][] = 'is writable: true';
-                } else {
-                    $list['files'][$element][] = 'is writable: false';
-                }
-                $size = filesize($input.$element);
-                $list['files'][$element][] = $size;
+            if (is_file($input.$element))
+            {
+				$list['files'][$element]['is_readable'] =
+					(is_readable($input.$element) == true ? 'true' : 'false');
+				$list['files'][$element]['is_writeable'] =
+					(is_writeable($input.$element) == true ? 'true' : 'false');
+				$list['files'][$element]['filesize'] = filesize($input.$element);
             }
         }
         closedir($currentDir);
         return $list;
     }
+    else
+	{
+		echo 'Введен неверный путь до директории';
+	}
 }
