@@ -41,5 +41,4 @@ function getDirectoryStatus($input): array
 	{
 		echo 'Введен неверный путь до директории';
 	}
-
 }
