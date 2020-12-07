@@ -5,49 +5,86 @@ require_once (__DIR__ . '/../lib/Calculator.php');
 
 class CalculatorTest extends TestCase
 {
-
-    public function testAdd(): void
+    public function addDataProvider()
+    {
+        return [
+          [2, -2, 0],
+          [-2, 2, 0],
+          [2, 2, 4],
+          [-2, -2, -4]
+        ];
+    }
+    /**
+     * @dataProvider addDataProvider
+     */
+    public function testAdd(int $a, int $b, int $result): void
     {
         $calculator = new Calculator();
 
-        self::assertEquals(0, $calculator->add(2, -2));
-        self::assertEquals(0, $calculator->add(-2, 2));
-        self::assertEquals(4, $calculator->add(2, 2));
-        self::assertEquals(-4, $calculator->add(-2, -2));
+        self::assertEquals($result, $calculator->add($a, $b));
     }
 
-    public function testSubtract(): void
+    public function subtractDataProvider()
     {
-        $calculator = new Calculator();
-
-        self::assertEquals(0, $calculator->subtract(2, 2));
-        self::assertEquals(0, $calculator->subtract(-2, -2));
-        self::assertEquals(4, $calculator->subtract(2, -2));
-        self::assertEquals(-4, $calculator->subtract(-2, 2));
+        return [
+            [2, 2, 0],
+            [-2, -2, 0],
+            [2, -2, 4],
+            [-2, 2, -4]
+        ];
     }
 
-    public function testMultiply(): void
+    /**
+     * @dataProvider subtractDataProvider
+     */
+
+    public function testSubtract(int $a, int $b, int $result): void
     {
         $calculator = new Calculator();
 
-        self::assertEquals(0, $calculator->multiply(0, -2));
-        self::assertEquals(4, $calculator->multiply(2, 2));
-        self::assertEquals(4, $calculator->multiply(-2, -2));
-        self::assertEquals(-4, $calculator->multiply(2, -2));
-        self::assertEquals(-4, $calculator->multiply(-2, 2));
-
+        self::assertEquals($result, $calculator->subtract($a, $b));
     }
 
-    public function testDivide(): void
+    public function multiplyDataProvider()
+    {
+        return [
+            [0, -2, 0],
+            [2, 2, 4],
+            [-2, -2, 4],
+            [-2, 2, -4],
+            [2, -2, -4]
+        ];
+    }
+
+    /**
+     * @dataProvider multiplyDataProvider
+     */
+    public function testMultiply(int $a, int $b, int $result): void
     {
         $calculator = new Calculator();
 
-        self::assertEquals(0, $calculator->divide(0, 2));
-        self::assertEquals(1, $calculator->divide(2, 2));
-        self::assertEquals(0.5, $calculator->divide(2, 4));
-        self::assertEquals(2, $calculator->divide(-4, -2));
-        self::assertEquals(-2, $calculator->divide(4, -2));
-        self::assertEquals(-2, $calculator->divide(-4, 2));
+        self::assertEquals($result, $calculator->multiply($a, $b));
+    }
+
+    public function divideDataProvider()
+    {
+        return [
+            [0, -2, 0],
+            [2, 2, 1],
+            [2, 4, 0.5],
+            [-4, -2, 2],
+            [4, -2, -2]
+        ];
+    }
+
+    /**
+     * @dataProvider divideDataProvider
+     */
+    public function testDivide(int $a, int $b, float $result): void
+    {
+        $calculator = new Calculator();
+
+        self::assertEquals($result, $calculator->divide($a, $b));
     }
 
     public function testDivideException(): void
@@ -59,27 +96,49 @@ class CalculatorTest extends TestCase
         $calculator->divide(1, 0);
     }
 
-    public function testPow(): void
+    public function powDataProvider()
     {
-        $calculator = new Calculator();
-
-        self::assertEquals(1, $calculator->pow(0, 0));
-        self::assertEquals(1, $calculator->pow(2, 0));
-        self::assertEquals(1, $calculator->pow(-2, 0));
-        self::assertEquals(4, $calculator->pow(2, 2));
-        self::assertEquals(4, $calculator->pow(-2, 2));
-        self::assertEquals(0.25, $calculator->pow(-2, -2));
-        self::assertEquals(0.25, $calculator->pow(2, -2));
+        return [
+            [0, 0, 1],
+            [2, 0, 1],
+            [-2, 0, 1],
+            [2, 2, 4],
+            [-2, 2, 4],
+            [-2, -2, 0.25],
+            [2, -2, 0.25]
+        ];
     }
 
-    public function testRadical(): void
+    /**
+     * @dataProvider powDataProvider
+     */
+
+    public function testPow(int $a, int $b, float $result): void
     {
         $calculator = new Calculator();
 
-        self::assertEquals(1, $calculator->radical(1));
-        self::assertEquals(0, $calculator->radical(0));
-        self::assertEquals(2, $calculator->radical(4));
-        self::assertEquals(1.4142135623731, $calculator->radical(2));
+        self::assertEquals($result, $calculator->pow($a, $b));
+    }
+
+    public function radicalDataProvider()
+    {
+        return [
+            [1, 1],
+            [0, 0],
+            [4, 2],
+            [2, 1.4142135623731],
+
+        ];
+    }
+
+    /**
+     * @dataProvider radicalDataProvider
+     */
+    public function testRadical(int $a, float $result): void
+    {
+        $calculator = new Calculator();
+
+        self::assertEquals($result, $calculator->radical($a));
     }
 
     public function testRadicalException(): void
