@@ -14,5 +14,3 @@ else
       $result = getDirectoryStatus($input);
       print_r($result);
 }
-echo sqrt(2);
-
