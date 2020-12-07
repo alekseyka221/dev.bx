@@ -36,7 +36,6 @@ function test()
 
 
 
-
     /*echo 'Название директории: 0' . PHP_EOL;
     echo 'Проверка на директорию' . PHP_EOL;
     echo 'Ожидание:' . 'is directory' . PHP_EOL;
