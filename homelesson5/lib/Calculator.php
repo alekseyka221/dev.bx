@@ -37,7 +37,7 @@ class Calculator
 	{
 		if($a < 0)
 		{
-			throw new InvalidArgumentException('Number cant be less than zero');
+			throw new InvalidArgumentException('The number must be at least zero');
 		}
 
 		return sqrt($a);
