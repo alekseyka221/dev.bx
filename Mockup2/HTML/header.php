@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="CSS/style_header.css">
+<link rel="stylesheet" href="../CSS/style_header.css">
 <header>
 	<div class="container-fluid " >
 		<div class="row bg_header" style="height: 64px;">

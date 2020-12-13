@@ -6,13 +6,13 @@
 	<!--	<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	<link rel="stylesheet" href="CSS/style_header.css">
+	<link rel="stylesheet" href="../CSS/style_header.css">
 
 	<title>Login</title>
 </head>
 <body >
 <div class="header">
-	<?php include 'header.php'?>
+	<?php include 'header.php' ?>
 </div>
 <div class="container pt-5 mt-5">
 	<div class="row justify-content-center text-center ">
@@ -31,7 +31,7 @@
 </div>
 
 <div class="footer w-100" style="position: absolute; bottom: 0; left: 0">
-	<?php include 'footer.php'?>
+	<?php include 'footer.php' ?>
 </div>
 </body>
 </html>
