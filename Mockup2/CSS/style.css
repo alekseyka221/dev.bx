@@ -1,7 +1,7 @@
 .banner{
     min-height: 100vh;
     min-width: 100%;
-    background: url("img/bgmoto.jpg");
+    background: url("../img/bgmoto.jpg");
     background-size: cover;
     z-index: 5;
 }

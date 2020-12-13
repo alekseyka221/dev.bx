@@ -1,4 +1,4 @@
-<link rel="stylesheet"  href="style_footer.css">
+<link rel="stylesheet"  href="CSS/style_footer.css">
 <footer>
 <div class="container-fluid color-black bg-dark text-white">
 	<div class="container" style="height: 380px">
