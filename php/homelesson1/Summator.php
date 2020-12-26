@@ -4,7 +4,7 @@
  * кол-во чисел от пользователя, сложить их и вывести результат.
  */
 
-require ("ReadFromConsole.php");
+require("ReadFromConsole.php");
 
 $array = readFromConsole();
 $sum = array_sum($array);

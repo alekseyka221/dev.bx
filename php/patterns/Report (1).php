@@ -103,10 +103,10 @@ class ReportPrinter
 
 $header = "Report title";
 $body = "Report body";
-//$textReportFactory = new HTMLReportFactory($header, $body);
-ReportPrinter::printReportByType(ReportPrinter::REPORT_TYPE_TEXT, $header, $body);
-//$report = $textReportFactory->createReport();
-//echo $report->getContent();
+$textReportFactory = new HTMLReportFactory($header, $body);
+//ReportPrinter::printReportByType(ReportPrinter::REPORT_TYPE_HTML, $header, $body);
+$report = $textReportFactory->createReport();
+echo $report->getContent();
 //$report = new TextReport;
 //$report->setText($header."\n".$body."\n");
 //echo $report->getContent();

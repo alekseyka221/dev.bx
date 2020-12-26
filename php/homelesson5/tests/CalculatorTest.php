@@ -1,7 +1,7 @@
 <?php
 //CalculatorTest.php
 use \PHPUnit\Framework\TestCase;
-require_once (__DIR__ . '/../lib/Calculator.php');
+require_once(__DIR__.'/../lib/Calculator.php');
 
 class CalculatorTest extends TestCase
 {
